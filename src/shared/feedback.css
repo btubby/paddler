@@ -1,0 +1,25 @@
+/* Visual feedback shared by every page: buttons respond to a press, a button that is working shows a
+   spinner (aria-busy="true"), and .spin / .loading-note are inline spinners for loading text. */
+button, [role='button'], .btn, a.btn { transition: transform 0.08s ease, background-color 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease; }
+button:not(:disabled):active, a.btn:active { transform: scale(0.96); }
+button:disabled { cursor: not-allowed; }
+button[aria-busy='true'] { position: relative; cursor: progress; opacity: 0.85; pointer-events: none; }
+button[aria-busy='true']::after {
+  content: ''; display: inline-block; width: 0.9em; height: 0.9em; margin-left: 0.55em; vertical-align: -0.12em;
+  border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: fb-spin 0.7s linear infinite;
+}
+.spin { display: inline-block; width: 1em; height: 1em; margin-right: 0.5em; vertical-align: -0.15em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: fb-spin 0.7s linear infinite; }
+.loading-note { display: flex; align-items: center; gap: 0.5em; }
+.loading-note .spin { margin: 0; flex: none; }
+@keyframes fb-spin { to { transform: rotate(360deg); } }
+
+/* the thin bar across the top of the page while the page is waiting on the server */
+#fb-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 9999; overflow: hidden; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+#fb-bar.on { opacity: 1; }
+#fb-bar::before { content: ''; position: absolute; top: 0; bottom: 0; width: 40%; background: linear-gradient(90deg, transparent, #c1602e, #ffd23f, transparent); animation: fb-slide 1s ease-in-out infinite; }
+@keyframes fb-slide { from { left: -40%; } to { left: 100%; } }
+@media (prefers-reduced-motion: reduce) {
+  button:not(:disabled):active { transform: none; }
+  button[aria-busy='true']::after, .spin { animation-duration: 2s; }
+  #fb-bar::before { animation-duration: 2.5s; }
+}

@@ -1,0 +1,84 @@
+:root {
+  --ink: #14201e;
+  --teal: #1f5c56;
+  --teal-deep: #123430;
+  --paper: #f0ede3;
+  --mist: #dce4e0;
+  --clay: #c1602e;
+  --white: #ffffff;
+  /* surfaces and text roles (each theme below overrides these) */
+  --surface: #ffffff;      /* cards, inputs, panels */
+  --heading: #123430;      /* headings and strong text on --paper / --surface */
+  --muted: #6b7572;
+  --line: #cfd8d5;
+  --pool: #e6e1d3;
+  --coach-bg: #fbf3ee;
+  --junior-bg: #ffe9cf;
+  --clay-hover: #a94f24;
+  --gold: #e3a91c;
+  --on-clay: #ffffff;       /* text on the accent colour */
+  color-scheme: light;
+  --font-display: 'Big Shoulders Display', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+button, input { font-family: var(--font-body); font-size: 0.95rem; }
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 0.6em 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--clay);
+  color: var(--on-clay);
+}
+.btn:hover { background: var(--clay-hover); }
+.btn-quiet {
+  background: transparent;
+  color: var(--heading);
+  border: 1.5px solid var(--heading);
+}
+.btn-quiet:hover { background: var(--teal-deep); color: var(--white); }
+
+/* ---- Colour schemes (chosen from the "Colours" menu, saved with the page options) ----
+   Default above = club colours, the same palette as the BSCC Star Awards page. */
+[data-theme="navy"] {
+  --ink: #101a33; --teal: #1d3a78; --teal-deep: #0f1f45; --paper: #eef1f7; --mist: #d8dfee;
+  --clay: #f2b705; --clay-hover: #ffc929; --on-clay: #0f1f45; --surface: #ffffff; --heading: #0f1f45;
+  --muted: #5d6680; --line: #c9d1e4; --pool: #dfe4f0; --coach-bg: #fff6dc; --junior-bg: #ffe9cf;
+}
+[data-theme="river"] {
+  --ink: #1d2418; --teal: #3e6b35; --teal-deep: #24401f; --paper: #f2efe2; --mist: #dfe6d2;
+  --clay: #2f7ea8; --clay-hover: #24658a; --surface: #fffdf6; --heading: #24401f;
+  --muted: #6c7262; --line: #d3dac6; --pool: #e7e3cf; --coach-bg: #e9f3f9; --junior-bg: #fbeccc;
+}
+[data-theme="night"] {
+  color-scheme: dark;
+  --ink: #e4ece9; --teal: #2f7d73; --teal-deep: #0b1d1b; --paper: #0f1716; --mist: #1f2d2b;
+  --clay: #c8622f; --clay-hover: #db733e; --white: #ffffff; --surface: #182321; --heading: #bfe3dc;
+  --muted: #93a39f; --line: #2e403d; --pool: #142019; --coach-bg: #2b211b; --junior-bg: #33281a;
+}
+[data-theme="contrast"] {
+  --ink: #000000; --teal: #003d36; --teal-deep: #000000; --paper: #ffffff; --mist: #e6e6e6;
+  --clay: #b33c00; --clay-hover: #8a2e00; --surface: #ffffff; --heading: #000000;
+  --muted: #3d3d3d; --line: #6b6b6b; --pool: #f0f0f0; --coach-bg: #fff0e6; --junior-bg: #fff0c7;
+}

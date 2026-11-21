@@ -1,0 +1,25 @@
+{
+  "name": "bscc-coaching-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev:netlify": "netlify dev",
+    "test": "node --test",
+    "sync-members": "node --env-file=.env scripts/sync-members.mjs",
+    "deploy": "npm test && npx netlify deploy --prod --build"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13",
+    "cheerio": "^1.0.0",
+    "pdfjs-dist": "^4.10.38",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.2.0"
+  }
+}

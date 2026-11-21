@@ -1,0 +1,22 @@
+:root {
+  --water-deep: #0b4f6c;
+  --water-mid: #137a9b;
+  --water-light: #2bb0c9;
+  --foam: rgba(255, 255, 255, 0.55);
+  --ink: #f4fbfd;
+  font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #7aa652; /* meadow, behind the river */
+  color: var(--ink);
+}

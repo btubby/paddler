@@ -1,0 +1,37 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# The paddler pages used to live under /coaching-groups/. Old links (and the query strings on
+# them, e.g. ?name=...) go to the new address.
+[[redirects]]
+  from = "/coaching-groups"
+  to = "/paddlers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/coaching-groups/paddler"
+  to = "/paddlers/paddler/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/coaching-groups/*"
+  to = "/paddlers/:splat"
+  status = 301
+  force = true
+
+[functions]
+  directory = "netlify/functions"
+  # pdf.js loads its own worker file at run time, so it is left as a separate package, not bundled
+  external_node_modules = ["pdfjs-dist"]
+  included_files = ["node_modules/pdfjs-dist/legacy/build/**"]
+
+# `npx netlify dev`: run this project's Vite on its fixed port and proxy exactly that,
+# so the page and the functions always come from this folder.
+[dev]
+  command = "npm run dev"
+  targetPort = 5190
+  port = 8888
+  framework = "#custom"

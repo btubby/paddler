@@ -1,0 +1,13 @@
+# Keep search engines and other polite crawlers off the paddler lookups and the data calls:
+# each paddler page is a call to a function, and Netlify's free plan has a monthly allowance.
+# (Rude bots ignore this file: Netlify's bot and rate-limit settings are the next step.)
+User-agent: *
+Disallow: /api/
+Disallow: /paddlers/
+Disallow: /coaching-groups/
+Disallow: /my-training/
+Disallow: /race-planner/
+Disallow: /bscc-stars/
+Disallow: /certificates/
+Disallow: /roles/
+Allow: /
