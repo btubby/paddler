@@ -1,4 +1,4 @@
-# BSCC Coaching App
+# Paddler
 
 The website and tools for **Bishops Stortford Canoe Club (BSCC)**, live at **https://bscc-coach.netlify.app**.
 Coaches get a board of coaching groups, anyone can look up a paddler's racing history, the race

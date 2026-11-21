@@ -1,4 +1,4 @@
-# Copilot / AI assistant instructions: BSCC Coaching App
+# Copilot / AI assistant instructions: Paddler
 
 Read `README.md` first: it describes every page, API endpoint, stored data and setting. This file is
 the short version: what the project is, how it's built, and the things that catch people out.
