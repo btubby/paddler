@@ -452,7 +452,7 @@ The homepage game's top five shows whatever name the player types (the box says 
 **Controls:**
 - Every member-data endpoint needs a Google sign-in with the coach role (or `SYNC_TOKEN` for the sync; 10 wrong tokens in 15 minutes blocks a client for a while).
 - A paddler (own link) or a coach can **download** everything kept about a paddler and **delete** all comments on their results and name links under their name. Comments can be removed by a coach, the paddler they are about, or their writer. Coaches can export all comments.
-- A privacy note sits at the foot of every paddler page: the contact (Ben Tubby, btubby@gmail.com) is `PRIVACY_NAME` / `PRIVACY_EMAIL` in `src/paddler/App.vue`. The note no longer mentions personal "My racing" links (being phased out): requests go to that contact, and a coach does the download/delete from the paddler page.
+- A privacy note sits at the foot of every paddler page: the contact (the site owner) is `PRIVACY_NAME` / `PRIVACY_EMAIL` in `src/paddler/App.vue`. The note no longer mentions personal "My racing" links (being phased out): requests go to that contact, and a coach does the download/delete from the paddler page.
 - Step-by-step server logs (which contain names) are off on the live site. The division lookup sends names in the request body, not the URL.
 - **Sign out** signs you out and forgets the member details stored in that browser. The shared groups are not affected.
 - The club is the data controller. The committee or welfare officer should agree to this use and the club's privacy notice should cover it (including public comments and merging results under a name).
